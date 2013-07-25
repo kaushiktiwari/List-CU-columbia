@@ -1,0 +1,91 @@
+# Logfile created on Sun Jul 21 22:17:38 -0400 2013  [4;36;1mSQL (16.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (56.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (254.4ms)[0m   [0;1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `permalink` varchar(75), `parent_id` int(11) DEFAULT 0, `type` varchar(12), `pos` int(11) DEFAULT 0, `pagetitle` varchar(100) DEFAULT 'railslist.com', `metakey` varchar(255) DEFAULT 'railslist.com', `metadesc` varchar(255) DEFAULT 'railslist.com', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (224.2ms)[0m   [0;1mCREATE TABLE `cities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `permalink` varchar(75), `pagetitle` varchar(100), `metakey` varchar(255), `metadesc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (181.6ms)[0m   [0;1mCREATE TABLE `classifieds` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(75), `description` text, `location` varchar(75), `adtype` varchar(1) DEFAULT 'O', `email` varchar(75), `phone` varchar(75), `activation_code` varchar(40), `status` tinyint DEFAULT 0, `category_id` int(11), `subcategory_id` int(11), `city_id` int(11), `permalink` varchar(255), `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (174.5ms)[0m   [0;1mCREATE TABLE `simple_captcha_data` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` varchar(40), `value` varchar(6), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (191.1ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (334.5ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (125.2ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (335.3ms)[0m   [0;1mDROP TABLE `categories`[0m
+  [4;35;1mSQL (166.2ms)[0m   [0mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `permalink` varchar(75), `parent_id` int(11) DEFAULT 0, `type` varchar(12), `pos` int(11) DEFAULT 0, `pagetitle` varchar(100) DEFAULT 'railslist.com', `metakey` varchar(255) DEFAULT 'railslist.com', `metadesc` varchar(255) DEFAULT 'railslist.com', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.9ms)[0m   [0mDROP TABLE `cities`[0m
+  [4;36;1mSQL (158.5ms)[0m   [0;1mCREATE TABLE `cities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `permalink` varchar(75), `pagetitle` varchar(100), `metakey` varchar(255), `metadesc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (73.0ms)[0m   [0;1mDROP TABLE `classifieds`[0m
+  [4;35;1mSQL (149.9ms)[0m   [0mCREATE TABLE `classifieds` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(75), `description` text, `location` varchar(75), `adtype` varchar(1) DEFAULT 'O', `email` varchar(75), `phone` varchar(75), `activation_code` varchar(40), `status` tinyint DEFAULT 0, `category_id` int(11), `subcategory_id` int(11), `city_id` int(11), `permalink` varchar(255), `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (74.2ms)[0m   [0mDROP TABLE `simple_captcha_data`[0m
+  [4;36;1mSQL (160.0ms)[0m   [0;1mCREATE TABLE `simple_captcha_data` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` varchar(40), `value` varchar(6), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-07-24 00:46:02) [GET]
+  [4;36;1mSQL (11.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/main
+Rendering main/index
+Rendered main/_logo (0.1ms)
+Rendered main/_menu (0.2ms)
+  [4;35;1mCity Load (78.5ms)[0m   [0mSELECT id, name, permalink FROM `cities` ORDER BY name ASC[0m
+Completed in 136ms (View: 50, DB: 90) | 200 OK [http://localhost/]
+
+
+Processing ClassifiedsController#new (for 127.0.0.1 at 2013-07-24 00:46:11) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mClassified Columns (74.1ms)[0m   [0mSHOW FIELDS FROM `classifieds`[0m
+Rendering template within layouts/classifieds
+Rendering classifieds/new
+  [4;36;1mCategory Load (17.8ms)[0m   [0;1mSELECT * FROM `categories` WHERE (`categories`.`parent_id` = '0') ORDER BY pos asc[0m
+  [4;35;1mCity Load (0.2ms)[0m   [0mSELECT id, name, permalink FROM `cities` ORDER BY name ASC[0m
+  [4;36;1mSimpleCaptchaData Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `simple_captcha_data`[0m
+  [4;35;1mSimpleCaptchaData Load (0.3ms)[0m   [0mSELECT * FROM `simple_captcha_data` WHERE (`simple_captcha_data`.`key` = '48cb58a6dc3d715b0cfceae4d83937a94b064bea') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSimpleCaptchaData Create (26.7ms)[0m   [0mINSERT INTO `simple_captcha_data` (`updated_at`, `value`, `key`, `created_at`) VALUES('2013-07-24 04:46:11', '752586', '48cb58a6dc3d715b0cfceae4d83937a94b064bea', '2013-07-24 04:46:11')[0m
+  [4;36;1mSQL (114.9ms)[0m   [0;1mCOMMIT[0m
+Rendered simple_captcha/_simple_captcha (0.2ms)
+Completed in 307ms (View: 226, DB: 74) | 200 OK [http://localhost/classifieds/new]
+
+
+Processing SimpleCaptchaController#simple_captcha (for 127.0.0.1 at 2013-07-24 00:46:12) [GET]
+  Parameters: {"time"=>"1374641171", "image_style"=>"", "simple_captcha_key"=>"48cb58a6dc3d715b0cfceae4d83937a94b064bea", "distortion"=>""}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSimpleCaptchaData Load (0.4ms)[0m   [0;1mSELECT * FROM `simple_captcha_data` WHERE (`simple_captcha_data`.`key` = '48cb58a6dc3d715b0cfceae4d83937a94b064bea') LIMIT 1[0m
+Sending data simple_captcha.jpg
+Completed in 345ms (View: 0, DB: 1) | 200 OK [http://localhost/simple_captcha/simple_captcha?distortion=&image_style=&simple_captcha_key=48cb58a6dc3d715b0cfceae4d83937a94b064bea&time=1374641171]
+
+
+Processing ClassifiedsController#create (for 127.0.0.1 at 2013-07-24 00:47:13) [POST]
+  Parameters: {"commit"=>"Post Classified Ad", "authenticity_token"=>"a8f2860c93f131461944b4ad6708543f3459ec2f", "classified"=>{"title"=>"jfjfadsj", "captcha_key"=>"48cb58a6dc3d715b0cfceae4d83937a94b064bea", "captcha"=>"752586", "description"=>"fdskgdgs", "adtype"=>"O", "phone"=>"", "image"=>"", "location"=>"jfdfgdg", "email"=>"f293370@rmqkr.net"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mClassified Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `classifieds`[0m
+Rendering /home/hp/Documents/Rails_projects/craigslist/public/404.html
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-07-24 00:47:28) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/main
+Rendering main/index
+Rendered main/_logo (0.2ms)
+Rendered main/_menu (0.2ms)
+  [4;36;1mCity Load (0.2ms)[0m   [0;1mSELECT id, name, permalink FROM `cities` ORDER BY name ASC[0m
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-07-24 00:47:31) [GET]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/main
+Rendering main/index
+Rendered main/_logo (0.1ms)
+Rendered main/_menu (0.2ms)
+  [4;36;1mCity Load (0.2ms)[0m   [0;1mSELECT id, name, permalink FROM `cities` ORDER BY name ASC[0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/]
